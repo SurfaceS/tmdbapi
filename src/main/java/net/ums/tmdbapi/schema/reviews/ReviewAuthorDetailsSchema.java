@@ -30,7 +30,7 @@ public class ReviewAuthorDetailsSchema {
 	@SerializedName("name")
 	private String name;
 	@SerializedName("rating")
-	private Long rating;
+	private Double rating;
 	@SerializedName("username")
 	private String username;
 
@@ -42,7 +42,7 @@ public class ReviewAuthorDetailsSchema {
 		return name;
 	}
 
-	public Long getRating() {
+	public Double getRating() {
 		return rating;
 	}
 
@@ -58,7 +58,7 @@ public class ReviewAuthorDetailsSchema {
 		this.name = value;
 	}
 
-	public void setRating(Long value) {
+	public void setRating(Double value) {
 		this.rating = value;
 	}
 
