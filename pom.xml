@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.ums</groupId>
+	<groupId>com.universalmediaserver</groupId>
 	<artifactId>tmdbapi</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 	<packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +15,11 @@
 		<name>Universal Media Server</name>
 		<url>https://www.universalmediaserver.com/</url>
 	</organization>
+	<developers> 
+		<developer> 
+			<name>Surf@ceS</name> 
+		</developer> 
+    </developers> 
 	<licenses>
 		<license>
 			<name>GNU General Public License version 3</name>
@@ -70,11 +75,6 @@
 			<artifactId>gson</artifactId>
 			<version>2.10.1</version>
 			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.13.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
