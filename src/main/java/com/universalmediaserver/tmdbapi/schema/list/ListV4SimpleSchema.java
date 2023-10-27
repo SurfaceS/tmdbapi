@@ -37,7 +37,7 @@ public class ListV4SimpleSchema extends IntegerIdNameSchema {
 	@SerializedName("featured")
 	private Long featured;
 	@SerializedName("revenue")
-	private String revenue;
+	private Long revenue;
 	@SerializedName("public")
 	private Long isPublic;
 	@SerializedName("updated_at")
@@ -49,7 +49,7 @@ public class ListV4SimpleSchema extends IntegerIdNameSchema {
 	@SerializedName("backdrop_path")
 	private String backdropPath;
 	@SerializedName("runtime")
-	private Long runtime;
+	private String runtime;
 	@SerializedName("average_rating")
 	private Long averageRating;
 	@SerializedName("iso_3166_1")
@@ -79,7 +79,7 @@ public class ListV4SimpleSchema extends IntegerIdNameSchema {
 		return featured;
 	}
 
-	public String getRevenue() {
+	public Long getRevenue() {
 		return revenue;
 	}
 
@@ -103,7 +103,7 @@ public class ListV4SimpleSchema extends IntegerIdNameSchema {
 		return backdropPath;
 	}
 
-	public Long getRuntime() {
+	public String getRuntime() {
 		return runtime;
 	}
 
@@ -143,7 +143,7 @@ public class ListV4SimpleSchema extends IntegerIdNameSchema {
 		this.featured = featured;
 	}
 
-	public void setRevenue(String revenue) {
+	public void setRevenue(Long revenue) {
 		this.revenue = revenue;
 	}
 
@@ -167,7 +167,7 @@ public class ListV4SimpleSchema extends IntegerIdNameSchema {
 		this.backdropPath = backdropPath;
 	}
 
-	public void setRuntime(Long runtime) {
+	public void setRuntime(String runtime) {
 		this.runtime = runtime;
 	}
 
