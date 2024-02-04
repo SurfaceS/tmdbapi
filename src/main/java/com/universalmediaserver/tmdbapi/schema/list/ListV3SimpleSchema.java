@@ -34,6 +34,8 @@ public class ListV3SimpleSchema extends IntegerIdNameSchema {
 	private Long itemCount;
 	@SerializedName("iso_639_1")
 	private String iso639Part1;
+	@SerializedName("iso_3166_1")
+	private String iso3166Part1;
 	@SerializedName("list_type")
 	private String listType;
 
@@ -51,6 +53,10 @@ public class ListV3SimpleSchema extends IntegerIdNameSchema {
 
 	public String getIso639Part1() {
 		return iso639Part1;
+	}
+
+	public String getIso3166Part1() {
+		return iso3166Part1;
 	}
 
 	public String getListType() {
@@ -71,6 +77,10 @@ public class ListV3SimpleSchema extends IntegerIdNameSchema {
 
 	public void setIso639Part1(String value) {
 		this.iso639Part1 = value;
+	}
+
+	public void setIso3166Part1(String value) {
+		this.iso3166Part1 = value;
 	}
 
 	public void setListType(String value) {

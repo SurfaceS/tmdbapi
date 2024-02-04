@@ -18,8 +18,8 @@ package com.universalmediaserver.tmdbapi.schema.tv;
 
 import com.google.gson.annotations.SerializedName;
 import com.universalmediaserver.tmdbapi.schema.media.MediaTypeInterface;
-import com.universalmediaserver.tmdbapi.schema.tv.episode.TvEpisodeSimpleSchema;
-import com.universalmediaserver.tmdbapi.schema.tv.season.TvSeasonSimpleSchema;
+import com.universalmediaserver.tmdbapi.schema.tv.episode.TvEpisodeTypedSchema;
+import com.universalmediaserver.tmdbapi.schema.tv.season.TvSeasonTypedSchema;
 import java.util.List;
 
 /**
@@ -30,23 +30,23 @@ import java.util.List;
 public class TvPlainSchema extends TvTypedSchema implements MediaTypeInterface {
 
 	@SerializedName("episodes")
-	private List<TvEpisodeSimpleSchema> episodes;
+	private List<TvEpisodeTypedSchema> episodes;
 	@SerializedName("seasons")
-	private List<TvSeasonSimpleSchema> seasons;
+	private List<TvSeasonTypedSchema> seasons;
 
-	public List<TvEpisodeSimpleSchema> getEpisodes() {
+	public List<TvEpisodeTypedSchema> getEpisodes() {
 		return episodes;
 	}
 
-	public List<TvSeasonSimpleSchema> getSeasons() {
+	public List<TvSeasonTypedSchema> getSeasons() {
 		return seasons;
 	}
 
-	public void setEpisodes(List<TvEpisodeSimpleSchema> value) {
+	public void setEpisodes(List<TvEpisodeTypedSchema> value) {
 		this.episodes = value;
 	}
 
-	public void setSeasons(List<TvSeasonSimpleSchema> value) {
+	public void setSeasons(List<TvSeasonTypedSchema> value) {
 		this.seasons = value;
 	}
 

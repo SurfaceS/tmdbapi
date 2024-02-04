@@ -519,24 +519,35 @@ public class TMDbClient {
 
 	private <T> T getResult(HttpRequest request, Class<T> resultClass) throws TMDbException {
 		try {
+			//wait until rate limiter allow it.
+			int requestId = TMDbRateLimiter.getRequestId();
+			return getResult(requestId, request, resultClass);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
+			return null;
+		}
+	}
+
+	private <T> T getResult(int requestId, HttpRequest request, Class<T> resultClass) throws InterruptedException, TMDbException {
+		try {
 			HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build();
 			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 			String body = response.body();
+			int statusCode = response.statusCode();
 			if (testing) {
 				lastBody = body;
 			}
-			if (response.statusCode() >= 200 && response.statusCode() < 300) {
+			if (statusCode >= 200 && statusCode < 300) {
 				return GSON.fromJson(body, resultClass);
 			} else {
 				StatusSchema status = GSON.fromJson(body, StatusSchema.class);
-				throw new TMDbException(response.statusCode() + ": TMDb status" + status.getStatusCode() + ": " + status.getStatusMessage());
+				throw new TMDbException(statusCode + ": TMDb status" + status.getStatusCode() + ": " + status.getStatusMessage());
 			}
 		} catch (IOException ex) {
 			throw new TMDbException("Error while sending the request", ex);
-		} catch (InterruptedException ex) {
-			Thread.currentThread().interrupt();
+		} finally {
+			TMDbRateLimiter.setRequestEnd(requestId);
 		}
-		return null;
 	}
 
 	private HttpRequest.Builder getBuilder(String endpoint, Map<String, String> query) throws TMDbException {
