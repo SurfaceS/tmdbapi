@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.universalmediaserver</groupId>
 	<artifactId>tmdbapi</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 	<packaging>jar</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,16 +32,16 @@
 	<scm>
 		<url>https://github.com/UniversalMediaServer/tmdb-api.git</url>
 	</scm>
-  <distributionManagement>
+	<distributionManagement>
 		<snapshotRepository>
-		  <id>ossrh</id>
-		  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 		<repository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</repository>
-  </distributionManagement>
+	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
@@ -93,7 +93,7 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>5.10.1</version>
+			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
