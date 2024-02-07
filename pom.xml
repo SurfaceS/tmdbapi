@@ -5,18 +5,22 @@
 	<artifactId>tmdbapi</artifactId>
 	<version>0.3</version>
 	<packaging>jar</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.release>17</maven.compiler.release>
+	</properties>
 	<name>TMDb API</name>
-	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
 	<url>https://github.com/UniversalMediaServer/tmdb-api</url>
 	<organization>
 		<name>Universal Media Server</name>
 		<url>https://www.universalmediaserver.com/</url>
 	</organization>
-	<developers>
-		<developer>
-			<name>Surf@ceS</name>
-		</developer>
-	</developers>
+	<developers> 
+		<developer> 
+			<name>Surf@ceS</name> 
+		</developer> 
+	</developers> 
 	<licenses>
 		<license>
 			<name>GNU General Public License version 3</name>
@@ -24,21 +28,7 @@
 			<distribution>manual</distribution>
 		</license>
 	</licenses>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.release>17</maven.compiler.release>
-		<maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
-		<maven.source.plugin.version>3.3.0</maven.source.plugin.version>
-		<maven.javadoc.plugin.version>3.6.3</maven.javadoc.plugin.version>
-		<maven.deploy.plugin.version>3.1.1</maven.deploy.plugin.version>
-		<maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
-		<maven.gpg.plugin.version>3.1.0</maven.gpg.plugin.version>
-		<maven.checkstyle.plugin.version>3.3.1</maven.checkstyle.plugin.version>
-		<gson.version>2.10.1</gson.version>
-		<junit.jupiter.version>5.10.2</junit.jupiter.version>
-		<puppycrawl.checkstyle.version>10.13.0</puppycrawl.checkstyle.version>
-	</properties>
+	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
 	<scm>
 		<url>https://github.com/UniversalMediaServer/tmdb-api.git</url>
 	</scm>
@@ -57,30 +47,35 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven.compiler.plugin.version}</version>
+				<version>3.12.1</version>
 				<configuration>
 					<showDeprecation>true</showDeprecation>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven.source.plugin.version}</version>
+				<version>3.3.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven.javadoc.plugin.version}</version>
+				<version>3.6.3</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>${maven.deploy.plugin.version}</version>
+				<version>3.1.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven.surefire.plugin.version}</version>
+				<version>3.2.5</version>
 				<configuration>
 					<argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
 					<runOrder>alphabetical</runOrder>
@@ -92,13 +87,13 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>${gson.version}</version>
+			<version>2.10.1</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -110,7 +105,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
-						<version>${maven.source.plugin.version}</version>
+						<version>2.2.1</version>
 						<executions>
 							<execution>
 								<id>attach-sources</id>
@@ -123,7 +118,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>${maven.javadoc.plugin.version}</version>
+						<version>2.9.1</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
@@ -136,7 +131,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${maven.gpg.plugin.version}</version>
+						<version>3.1.0</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
@@ -157,12 +152,12 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-checkstyle-plugin</artifactId>
-						<version>${maven.checkstyle.plugin.version}</version>
+						<version>3.3.1</version>
 						<dependencies>
 							<dependency>
 								<groupId>com.puppycrawl.tools</groupId>
 								<artifactId>checkstyle</artifactId>
-								<version>${puppycrawl.checkstyle.version}</version>
+								<version>10.13.0</version>
 							</dependency>
 						</dependencies>
 						<configuration>
@@ -185,7 +180,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<version>${maven.surefire.plugin.version}</version>
+						<version>3.2.5</version>
 						<configuration>
 							<skipTests>false</skipTests>
 						</configuration>
