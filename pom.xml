@@ -5,6 +5,25 @@
 	<artifactId>tmdbapi</artifactId>
 	<version>0.3</version>
 	<packaging>jar</packaging>
+	<name>TMDb API</name>
+	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
+	<url>https://github.com/UniversalMediaServer/tmdb-api</url>
+	<organization>
+		<name>Universal Media Server</name>
+		<url>https://www.universalmediaserver.com/</url>
+	</organization>
+	<developers>
+		<developer>
+			<name>Surf@ceS</name>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>GNU General Public License version 3</name>
+			<url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+			<distribution>manual</distribution>
+		</license>
+	</licenses>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -20,25 +39,6 @@
 		<junit.jupiter.version>5.10.2</junit.jupiter.version>
 		<puppycrawl.checkstyle.version>10.13.0</puppycrawl.checkstyle.version>
 	</properties>
-	<name>TMDb API</name>
-	<url>https://github.com/UniversalMediaServer/tmdb-api</url>
-	<organization>
-		<name>Universal Media Server</name>
-		<url>https://www.universalmediaserver.com/</url>
-	</organization>
-	<developers> 
-		<developer> 
-			<name>Surf@ceS</name> 
-		</developer> 
-	</developers> 
-	<licenses>
-		<license>
-			<name>GNU General Public License version 3</name>
-			<url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
-			<distribution>manual</distribution>
-		</license>
-	</licenses>
-	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
 	<scm>
 		<url>https://github.com/UniversalMediaServer/tmdb-api.git</url>
 	</scm>
