@@ -100,8 +100,8 @@ public class TMDbEnvironmentTest extends BaseTestClass {
 			value = "haveTmdbAccount"
 	)
 	public void testTmdbAccountV4() {
-		LOGGER.warning("TMDB_USERNAME and/or TMDB_PASSWORD are not defined in the system environment.");
-		LOGGER.info("Test requiring api V3 session will be skipped.");
+		LOGGER.warning("TMDB_ACCOUNT is not defined in the system environment.");
+		LOGGER.info("Test requiring api V4 account will be skipped.");
 	}
 
 }
