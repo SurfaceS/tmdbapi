@@ -18,6 +18,7 @@ package com.universalmediaserver.tmdbapi.schema.movie;
 
 import com.google.gson.annotations.SerializedName;
 import com.universalmediaserver.tmdbapi.schema.IntegerIdSchema;
+import java.util.List;
 
 /**
  * TMDb Movie Base Schema.
@@ -30,6 +31,8 @@ public class MovieBaseSchema extends IntegerIdSchema {
 	private Boolean adult;
 	@SerializedName("backdrop_path")
 	private String backdropPath;
+	@SerializedName("origin_country")
+	private List<String> originCountry;
 	@SerializedName("original_language")
 	private String originalLanguage;
 	@SerializedName("original_title")
@@ -69,6 +72,10 @@ public class MovieBaseSchema extends IntegerIdSchema {
 
 	public String getOriginalTitle() {
 		return originalTitle;
+	}
+
+	public List<String> getOriginCountry() {
+		return originCountry;
 	}
 
 	public double getPopularity() {
@@ -113,6 +120,10 @@ public class MovieBaseSchema extends IntegerIdSchema {
 
 	public void setOriginalTitle(String value) {
 		this.originalTitle = value;
+	}
+
+	public void setOriginCountry(List<String> value) {
+		this.originCountry = value;
 	}
 
 	public void setOverview(String value) {

@@ -19,6 +19,7 @@ package com.universalmediaserver.tmdbapi.endpoint.account.tv;
 import com.universalmediaserver.tmdbapi.TMDbClient;
 import com.universalmediaserver.tmdbapi.endpoint.Endpoint;
 import com.universalmediaserver.tmdbapi.schema.tv.TvShortResultsSchema;
+import com.universalmediaserver.tmdbapi.schema.tv.TvSimpleResultsSchema;
 import com.universalmediaserver.tmdbapi.schema.tv.TvTypedResultsSchema;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,11 +74,11 @@ public class AccountTvV4Endpoint extends Endpoint {
 	 *
 	 * @return Favorite TV shows.
 	 */
-	public TvShortResultsSchema getFavorites() {
+	public TvSimpleResultsSchema getFavorites() {
 		Map<String, String> query = new HashMap<>();
 		addQueryNumber(query, QUERY_PAGE, page);
 		addQueryString(query, QUERY_SORT_BY, sortBy);
-		return tmdbClient.get(V4_ACCOUNT_ENDPOINT + accountId + TV_FAVORITES_ENDPOINT, TvShortResultsSchema.class, query);
+		return tmdbClient.get(V4_ACCOUNT_ENDPOINT + accountId + TV_FAVORITES_ENDPOINT, TvSimpleResultsSchema.class, query);
 	}
 
 	/**
@@ -97,11 +98,11 @@ public class AccountTvV4Endpoint extends Endpoint {
 	 *
 	 * @return TV shows Watchlist.
 	 */
-	public TvShortResultsSchema getWatchlist() {
+	public TvSimpleResultsSchema getWatchlist() {
 		Map<String, String> query = new HashMap<>();
 		addQueryNumber(query, QUERY_PAGE, page);
 		addQueryString(query, QUERY_SORT_BY, sortBy);
-		return tmdbClient.get(V4_ACCOUNT_ENDPOINT + accountId + TV_WATCHLIST_ENDPOINT, TvShortResultsSchema.class, query);
+		return tmdbClient.get(V4_ACCOUNT_ENDPOINT + accountId + TV_WATCHLIST_ENDPOINT, TvSimpleResultsSchema.class, query);
 	}
 
 	/**
