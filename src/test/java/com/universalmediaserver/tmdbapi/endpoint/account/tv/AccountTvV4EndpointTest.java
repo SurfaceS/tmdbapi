@@ -18,6 +18,7 @@ package com.universalmediaserver.tmdbapi.endpoint.account.tv;
 
 import com.universalmediaserver.tmdbapi.BaseTestClass;
 import com.universalmediaserver.tmdbapi.schema.tv.TvShortResultsSchema;
+import com.universalmediaserver.tmdbapi.schema.tv.TvSimpleResultsSchema;
 import com.universalmediaserver.tmdbapi.schema.tv.TvTypedResultsSchema;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIf;
@@ -41,7 +42,7 @@ public class AccountTvV4EndpointTest extends BaseTestClass {
 	@Test
 	public void testGetFavorites() {
 		System.out.println("AccountTvV4Endpoint getFavorites");
-		TvShortResultsSchema result = tmdb.accountV4(getTmdbAccount()).forTv().getFavorites();
+		TvSimpleResultsSchema result = tmdb.accountV4(getTmdbAccount()).forTv().getFavorites();
 		assertParsedObject(result);
 	}
 
@@ -61,7 +62,7 @@ public class AccountTvV4EndpointTest extends BaseTestClass {
 	@Test
 	public void testGetWatchlist() {
 		System.out.println("AccountTvV4Endpoint getWatchlist");
-		TvShortResultsSchema result = tmdb.accountV4(getTmdbAccount()).forTv().getWatchlist();
+		TvSimpleResultsSchema result = tmdb.accountV4(getTmdbAccount()).forTv().getWatchlist();
 		assertParsedObject(result);
 	}
 
