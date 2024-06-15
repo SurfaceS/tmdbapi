@@ -50,10 +50,10 @@ public class TMDbRateLimiter {
 	}
 
 	private static synchronized boolean hasRequestLimitWindow(int id) {
-		long oldValue = System.currentTimeMillis() + REQUEST_LIMIT_MILLIS;
+		long now = System.currentTimeMillis();
 		for (Iterator<Entry<Integer, Long>> iter = REQUESTS.entrySet().iterator(); iter.hasNext();) {
 			Entry<Integer, Long> entry = iter.next();
-			if (entry.getValue() < oldValue) {
+			if (entry.getValue() + REQUEST_LIMIT_MILLIS < now) {
 				iter.remove();
 			}
 		}

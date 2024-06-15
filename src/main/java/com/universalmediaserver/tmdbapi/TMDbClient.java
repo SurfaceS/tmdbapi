@@ -55,10 +55,8 @@ import com.universalmediaserver.tmdbapi.schema.StatusSchema;
 import com.universalmediaserver.tmdbapi.schema.media.MediaTypeInterface;
 import com.universalmediaserver.tmdbapi.schema.media.MediaTypeInterfaceDeserializer;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -72,7 +70,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Create a new TMDb client.
+ * TMDb API client.
  *
  * @author SurfaceS
  */
@@ -569,17 +567,16 @@ public class TMDbClient {
 			}
 		}
 		urlBuilder.insert(0, endpoint);
-		URL contextUrl;
+		URI contextURI;
 		try {
-			contextUrl = new URL(baseUrl);
-		} catch (MalformedURLException ex) {
+			contextURI = new URI(baseUrl);
+		} catch (URISyntaxException ex) {
 			throw new TMDbException("Base url '" + baseUrl + "' malformed", ex);
 		}
 		URI requestUri;
 		try {
-			URL requestUrl = new URL(contextUrl, urlBuilder.toString());
-			requestUri = requestUrl.toURI();
-		} catch (MalformedURLException | URISyntaxException ex) {
+			requestUri = contextURI.resolve(urlBuilder.toString());
+		} catch (IllegalArgumentException ex) {
 			throw new TMDbException("Request url malformed", ex);
 		}
 		HttpRequest.Builder builder = HttpRequest.newBuilder(requestUri)
