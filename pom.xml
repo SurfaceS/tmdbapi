@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.universalmediaserver</groupId>
 	<artifactId>tmdbapi</artifactId>
-	<version>0.3</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<name>TMDb API</name>
 	<description>A java library that makes the interaction with themoviedb.org V4 API easy.</description>
