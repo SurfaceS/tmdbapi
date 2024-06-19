@@ -18,6 +18,7 @@ package com.universalmediaserver.tmdbapi;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
 import com.universalmediaserver.tmdbapi.endpoint.account.AccountIdV4Endpoint;
 import com.universalmediaserver.tmdbapi.endpoint.account.AccountV3Endpoint;
 import com.universalmediaserver.tmdbapi.endpoint.account.AccountV4Endpoint;
@@ -538,7 +539,14 @@ public class TMDbClient {
 			if (statusCode >= 200 && statusCode < 300) {
 				return GSON.fromJson(body, resultClass);
 			} else {
-				StatusSchema status = GSON.fromJson(body, StatusSchema.class);
+				StatusSchema status;
+				try {
+					status = GSON.fromJson(body, StatusSchema.class);
+				} catch (JsonSyntaxException ex) {
+					status = new StatusSchema();
+					status.setStatusCode(statusCode);
+					status.setStatusMessage(body);
+				}
 				throw new TMDbException(statusCode + ": TMDb status" + status.getStatusCode() + ": " + status.getStatusMessage());
 			}
 		} catch (IOException ex) {
