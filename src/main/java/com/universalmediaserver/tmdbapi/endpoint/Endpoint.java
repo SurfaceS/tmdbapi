@@ -28,8 +28,8 @@ import java.util.Map;
  */
 public class Endpoint {
 
-	protected static final String V3_ENDPOINT = "3/";
-	protected static final String V4_ENDPOINT = "4/";
+	protected static final String V3_ENDPOINT = "/3/";
+	protected static final String V4_ENDPOINT = "/4/";
 
 	protected static final String QUERY_ACCESS_TOKEN = "access_token";
 	protected static final String QUERY_APPEND_TO_RESPONSE = "append_to_response";
