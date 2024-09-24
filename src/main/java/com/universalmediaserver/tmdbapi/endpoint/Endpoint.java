@@ -69,7 +69,7 @@ public class Endpoint {
 		}
 	}
 
-	protected static void addQueryEnums(Map<String, String> query, String parameter, List<? extends Enum> values) {
+	protected static void addQueryEnums(Map<String, String> query, String parameter, List<? extends Enum<?>> values) {
 		if (values != null && !values.isEmpty()) {
 			StringBuilder valueBuilder = new StringBuilder();
 			for (Object value : values) {

@@ -20,6 +20,7 @@ package com.universalmediaserver.tmdbapi;
  *
  * @author SurfaceS
  */
+@SuppressWarnings("serial")
 public class TMDbException extends Exception {
 
 	public TMDbException(String message) {

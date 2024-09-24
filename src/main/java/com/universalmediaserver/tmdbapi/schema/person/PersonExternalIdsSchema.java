@@ -35,12 +35,16 @@ public class PersonExternalIdsSchema {
 	private String imdbId;
 	@SerializedName("instagram_id")
 	private String instagramId;
+	@SerializedName("tiktok_id")
+	private String tiktokId;
 	@SerializedName("tvrage_id")
 	private Long tvrageId;
 	@SerializedName("twitter_id")
 	private String twitterId;
 	@SerializedName("wikidata_id")
 	private String wikidataId;
+	@SerializedName("youtube_id")
+	private String youtubeId;
 
 	public String getFreebaseId() {
 		return freebaseId;
@@ -62,6 +66,10 @@ public class PersonExternalIdsSchema {
 		return instagramId;
 	}
 
+	public String getTiktokId() {
+		return tiktokId;
+	}
+
 	public Long getTvrageId() {
 		return tvrageId;
 	}
@@ -72,6 +80,10 @@ public class PersonExternalIdsSchema {
 
 	public String getWikidataId() {
 		return wikidataId;
+	}
+
+	public String getYoutubeId() {
+		return youtubeId;
 	}
 
 	public void setFacebookId(String value) {
@@ -94,6 +106,10 @@ public class PersonExternalIdsSchema {
 		this.instagramId = value;
 	}
 
+	public void setTiktokId(String value) {
+		this.tiktokId = value;
+	}
+
 	public void setTvrageId(Long value) {
 		this.tvrageId = value;
 	}
@@ -104,6 +120,10 @@ public class PersonExternalIdsSchema {
 
 	public void setWikidataId(String value) {
 		this.wikidataId = value;
+	}
+
+	public void setYoutubeId(String value) {
+		this.youtubeId = value;
 	}
 
 }

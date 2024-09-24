@@ -38,6 +38,8 @@ public class ListV3SimpleSchema extends IntegerIdNameSchema {
 	private String iso3166Part1;
 	@SerializedName("list_type")
 	private String listType;
+	@SerializedName("poster_path")
+	private String posterPath;
 
 	public String getDescription() {
 		return description;
@@ -63,6 +65,10 @@ public class ListV3SimpleSchema extends IntegerIdNameSchema {
 		return listType;
 	}
 
+	public String getPosterPath() {
+		return posterPath;
+	}
+
 	public void setDescription(String value) {
 		this.description = value;
 	}
@@ -85,6 +91,10 @@ public class ListV3SimpleSchema extends IntegerIdNameSchema {
 
 	public void setListType(String value) {
 		this.listType = value;
+	}
+
+	public void setPosterPath(String value) {
+		this.posterPath = value;
 	}
 
 }

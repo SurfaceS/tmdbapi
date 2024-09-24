@@ -23,5 +23,6 @@ import java.util.ArrayList;
  *
  * @author SurfaceS
  */
+@SuppressWarnings("serial")
 public class ConfigurationTimezoneSchemaArray extends ArrayList<ConfigurationTimezoneSchema> {
 }

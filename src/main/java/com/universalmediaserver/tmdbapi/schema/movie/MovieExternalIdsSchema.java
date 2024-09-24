@@ -41,6 +41,8 @@ public class MovieExternalIdsSchema {
 	private Long tvrageId;
 	@SerializedName("twitter_id")
 	private String twitterId;
+	@SerializedName("wikidata_id")
+	private String wikidataId;
 
 	public String getFreebaseId() {
 		return freebaseId;
@@ -74,6 +76,10 @@ public class MovieExternalIdsSchema {
 		return twitterId;
 	}
 
+	public String getWikidataId() {
+		return wikidataId;
+	}
+
 	public void setFacebookId(String value) {
 		this.facebookId = value;
 	}
@@ -104,6 +110,10 @@ public class MovieExternalIdsSchema {
 
 	public void setTwitterId(String value) {
 		this.twitterId = value;
+	}
+
+	public void setWikidataId(String value) {
+		this.wikidataId = value;
 	}
 
 }

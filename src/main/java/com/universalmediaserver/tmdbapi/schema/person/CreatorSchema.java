@@ -30,6 +30,8 @@ public class CreatorSchema extends IntegerIdNameSchema {
 	private String creditId;
 	@SerializedName("gender")
 	private Long gender;
+	@SerializedName("original_name")
+	private String originalName;
 	@SerializedName("profile_path")
 	private String profilePath;
 
@@ -39,6 +41,10 @@ public class CreatorSchema extends IntegerIdNameSchema {
 
 	public Long getGender() {
 		return gender;
+	}
+
+	public String getOriginalName() {
+		return originalName;
 	}
 
 	public String getProfilePath() {
@@ -51,6 +57,10 @@ public class CreatorSchema extends IntegerIdNameSchema {
 
 	public void setGender(Long value) {
 		this.gender = value;
+	}
+
+	public void setOriginalName(String value) {
+		this.originalName = value;
 	}
 
 	public void setProfilePath(String value) {
