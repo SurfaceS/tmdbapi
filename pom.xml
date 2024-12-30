@@ -37,7 +37,7 @@
 		<maven.checkstyle.plugin.version>3.6.0</maven.checkstyle.plugin.version>
 		<gson.version>2.11.0</gson.version>
 		<junit.jupiter.version>5.11.3</junit.jupiter.version>
-		<puppycrawl.checkstyle.version>10.20.0</puppycrawl.checkstyle.version>
+		<puppycrawl.checkstyle.version>10.21.1</puppycrawl.checkstyle.version>
 	</properties>
 	<scm>
 		<url>https://github.com/UniversalMediaServer/tmdb-api.git</url>
